@@ -1,3 +1,85 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 body {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+  padding: 0px;
+  margin: 0px; }
+
+.slice-slider {
+  height: 80vh;
+  margin: 10vh;
+  overflow: hidden;
+  color: white;
+  position: relative; }
+  .slice-slider .slice-slider-inner {
+    width: calc(100% + 25px);
+    overflow: auto;
+    position: relative;
+    height: 80vh; }
+  .slice-slider .slider {
+    position: absolute;
+    width: 50%; }
+    .slice-slider .slider.left {
+      top: 0px;
+      left: 0px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+    .slice-slider .slider.right {
+      bottom: 0px;
+      right: 0px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse; }
+  .slice-slider .slide {
+    height: 80vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 15%; }
+    .slice-slider .slide.img {
+      background-size: cover; }
+    .slice-slider .slide:nth-child(1), .slice-slider .slide:nth-child(4) {
+      background-color: #A9A9A9; }
+    .slice-slider .slide:nth-child(2) {
+      background-color: #1E191E; }
+    .slice-slider .slide:nth-child(3) {
+      background-color: #5F5F5F; }
+  .slice-slider .tagline {
+    font-size: 0.8em; }
+  .slice-slider .title {
+    font-size: 4em;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    line-height: 1em; }
+  .slice-slider .slide-btn {
+    color: white;
+    border: 1px solid white;
+    text-decoration: none;
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+    margin: 50px 0px; }
+    .slice-slider .slide-btn:hover, .slice-slider .slide-btn:active {
+      color: white;
+      border: 1px solid white;
+      text-decoration: none; }

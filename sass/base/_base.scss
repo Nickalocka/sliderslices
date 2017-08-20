@@ -1,5 +1,104 @@
 $font-main: 'Open Sans', sans-serif;
+$font-alt: 'Montserrat', sans-serif;
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
 
 body {
 	font-family: $font-main;
+	padding: 0px;
+	margin: 0px;
+}
+
+.slice-slider {
+    height: 80vh;
+    margin: 10vh;
+    overflow: hidden;
+    color: white;
+    position: relative;
+
+    .slice-slider-inner {
+    	width: calc(100% + 25px);
+	    overflow: auto;
+	    position: relative;
+	    height: 80vh;
+    }
+
+	.slider {
+		position: absolute;		
+		width: 50%;
+
+		&.left {
+			top: 0px;
+			left: 0px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		&.right {
+			bottom: 0px;
+			right: 0px;
+			display: flex;
+			flex-direction: column-reverse;
+		}
+
+	}
+
+	.slide {
+		height: 80vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 15%;
+
+		&.img {
+			background-size: cover;
+		}
+
+		&:nth-child(1), &:nth-child(4) {
+			background-color: #A9A9A9;
+		}
+
+		&:nth-child(2) {
+			background-color: #1E191E;
+		}
+
+		&:nth-child(3) {
+			background-color: #5F5F5F;
+		}
+
+	}
+
+	.slide-content {
+
+	}
+
+	.tagline {
+		font-size: 0.8em;
+	}
+
+	.title {
+		font-size: 4em;
+		font-family: $font-alt;
+		font-weight: 800;
+		line-height: 1em;
+	}
+
+	.slide-btn {
+		color: white;
+		border: 1px solid white;
+		text-decoration: none;
+		padding: 10px;
+		width: 50px;
+		text-align: center;
+		margin: 50px 0px;
+
+		&:hover, &:active {
+			color: white;
+			border: 1px solid white;
+			text-decoration: none;
+		}
+	}
+
 }
