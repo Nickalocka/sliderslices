@@ -10255,55 +10255,64 @@ return jQuery;
 $(document).ready(function(){
 
 
-sliceSlider = function(){
+halfSlider = function(){
 
-	$(".slide").each(function(){
-		$(this).css("height", Math.round(($(window).height() * 0.8)) + 1);
-	});
+		var slider = $(".half-slider");
+		var slides = slider.find(".slider");
+		var slide = slides.find(".slide");
+		var innerSlider = slider.find(".half-slider-inner");
+		var sliceScrollTimer = null;		
 
-	var sliceScrollTimer = null;
+		slide.css("height", Math.round(($(window).height() * 0.8)) + 1);
 
-	$(".slice-slider-inner").scroll(function () {
-		$(".slice-slider-inner").scrollTop(0);
+		var height = slide.outerHeight();
 
-	    if (sliceScrollTimer) {
-	        clearTimeout(sliceScrollTimer);
-	    }
+		innerSlider.scroll(function () {
+			innerSlider.scrollTop(0);
 
-	    sliceScrollTimer = setTimeout(slide, 150);
-	});
+		    if (sliceScrollTimer) {
+		        clearTimeout(sliceScrollTimer);
+		    }
+
+		    sliceScrollTimer = setTimeout(slide, 175);
+		});
 
 	slide = function(){
-		sliceScrollTimer = null;
-		var slider = $(".slice-slider");
-		var slides = slider.find(".slider");
+		sliceScrollTimer = null;	
 
-		var slide = slides.find(".slide");
-		var height = slide.outerHeight();		
+		var curPosition = parseInt(slides.css("top"));
+		var newPosition;
 
-		var x = parseInt($(".slider.left").css("top"));
-
-		if (x == 0) {
-			y = (x + height) * -1;
+		if (curPosition == 0) {
+			newPosition = (curPosition + height) * -1;
 		} else {
-			y = (x - height);
+			newPosition = (curPosition - height);
 		}
 
-		$(".slider.left").animate({
-			top: y
+		slides.each(function(){
+			var s = $(this);
+			
+				if (s.hasClass("left")) {
+					if (Math.floor(parseInt(s.css("bottom"))) != 0) {
+						s.animate({
+							top: newPosition
+						});
+					}
+				} else {
+					if (Math.floor(parseInt(s.css("top"))) != 0) {
+						s.animate({
+							bottom: newPosition
+						});
+					}
+				}			
+
 		});
 
-		$(".slider.right").animate({
-			bottom: y
-		});
-
-		$(".slice-slider-inner").scrollTop(0);
+		innerSlider.scrollTop(0);
 
 	};
 };
 
-sliceSlider();
-
-
+halfSlider();
 
 });

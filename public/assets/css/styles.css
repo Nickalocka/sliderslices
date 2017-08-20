@@ -9,21 +9,21 @@ body {
   padding: 0px;
   margin: 0px; }
 
-.slice-slider {
+.half-slider {
   height: 80vh;
   margin: 10vh;
   overflow: hidden;
   color: white;
   position: relative; }
-  .slice-slider .slice-slider-inner {
+  .half-slider .half-slider-inner {
     width: calc(100% + 25px);
     overflow: auto;
     position: relative;
     height: 80vh; }
-  .slice-slider .slider {
+  .half-slider .slider {
     position: absolute;
     width: 50%; }
-    .slice-slider .slider.left {
+    .half-slider .slider.left {
       top: 0px;
       left: 0px;
       display: -webkit-box;
@@ -33,7 +33,7 @@ body {
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column; }
-    .slice-slider .slider.right {
+    .half-slider .slider.right {
       bottom: 0px;
       right: 0px;
       display: -webkit-box;
@@ -43,7 +43,7 @@ body {
       -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
       flex-direction: column-reverse; }
-  .slice-slider .slide {
+  .half-slider .slide {
     height: 80vh;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -56,22 +56,22 @@ body {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 15%; }
-    .slice-slider .slide.img {
+    .half-slider .slide.img {
       background-size: cover; }
-    .slice-slider .slide:nth-child(1), .slice-slider .slide:nth-child(4) {
+    .half-slider .slide:nth-child(1), .half-slider .slide:nth-child(4) {
       background-color: #A9A9A9; }
-    .slice-slider .slide:nth-child(2) {
+    .half-slider .slide:nth-child(2) {
       background-color: #1E191E; }
-    .slice-slider .slide:nth-child(3) {
+    .half-slider .slide:nth-child(3) {
       background-color: #5F5F5F; }
-  .slice-slider .tagline {
+  .half-slider .tagline {
     font-size: 0.8em; }
-  .slice-slider .title {
+  .half-slider .title {
     font-size: 4em;
     font-family: "Montserrat", sans-serif;
     font-weight: 800;
     line-height: 1em; }
-  .slice-slider .slide-btn {
+  .half-slider .slide-btn {
     color: white;
     border: 1px solid white;
     text-decoration: none;
@@ -79,7 +79,31 @@ body {
     width: 50px;
     text-align: center;
     margin: 50px 0px; }
-    .slice-slider .slide-btn:hover, .slice-slider .slide-btn:active {
+    .half-slider .slide-btn:hover, .half-slider .slide-btn:active {
       color: white;
       border: 1px solid white;
       text-decoration: none; }
+
+.fading-slides {
+  height: 100vh;
+  text-align: center; }
+  .fading-slides .slide {
+    display: none;
+    height: 100%; }
+    .fading-slides .slide .slide-content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      height: 100%;
+      padding: 30px;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-pack: distribute;
+      justify-content: space-around; }
+    .fading-slides .slide.dark {
+      background: black;
+      color: white; }
+    .fading-slides .slide:nth-child(1) {
+      display: block; }
