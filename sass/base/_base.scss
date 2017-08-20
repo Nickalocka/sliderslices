@@ -106,10 +106,14 @@ body {
 .fading-slides {
 	height: 100vh;
 	text-align: center;
+	background: black;
 
 	.slide {
 		display: none;
 		height: 100%;
+		opacity: 0;
+		background: black;
+	    color: white;
 
 	    .slide-content {
 	    	display: flex;
@@ -117,15 +121,30 @@ body {
 		    padding: 30px;	    
 		    flex-direction: column;
 		    justify-content: space-around;
+		    position: relative;
 	    }
 
-	    &.dark {
-	    	background: black;
-	    	color: white;
+	    &.light {
+	    	background: white;
+	    	color: black;
 	    }
 
 		&:nth-child(1) {
 			display: block;
 		}
+	}
+
+	.slide-down {
+		position: absolute;
+	    bottom: 30px;
+	    margin: 0 auto;
+	    height: 100px;
+	    width: 100px;
+	    left: 0px;
+	    right: 0px;
+	    border-radius: 100px;
+	    border: 2px solid black;
+	    font-size: 2.5em;
+	    line-height: 90px;
 	}
 }

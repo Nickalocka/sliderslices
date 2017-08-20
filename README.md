@@ -1,1 +1,1 @@
-# sliderslices
+# halfslider

@@ -1,5 +1,35 @@
 $(document).ready(function(){
 
+fadingSlides = function(){
+	var slider = $(".fading-slides");
+	var slides = slider.find(".slide");
+	var count = slides.length;
+	var i = 1;
+
+	fade = function(elem) {
+		elem.animate({
+	    opacity: 1
+	  }, 2000, 
+	  function() {
+	  	if (i < count) {
+	    elem.animate({
+	    	opacity: 0
+	    }, 2000, function(){
+	    	elem.remove();				
+				if (i < count) {
+					var x = i;
+					i++;
+					fade($(slides[x]));
+				};
+	    })
+	  };
+	  });
+	};
+
+	fade($(slides[0]));
+
+};
+
 
 halfSlider = function(){
 
@@ -20,7 +50,7 @@ halfSlider = function(){
 		        clearTimeout(sliceScrollTimer);
 		    }
 
-		    sliceScrollTimer = setTimeout(slide, 175);
+		    sliceScrollTimer = setTimeout(slide, 250);
 		});
 
 	slide = function(){
@@ -59,6 +89,7 @@ halfSlider = function(){
 	};
 };
 
+fadingSlides();
 halfSlider();
 
 });
